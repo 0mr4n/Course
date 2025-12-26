@@ -1,0 +1,44 @@
+# Day7 - hangman
+import random
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+from hangmanwords import list 
+print(chosen_word)
+placeholder = ""
+for dash in chosen_word:
+    dash = "_"
+    placeholder += dash
+print(placeholder)
+
+# for letter in chosen_word:
+#     if userInput == letter:
+#         print("Right")
+#     else:
+#         print("Wrong")
+correct_letters = []
+lives = 6
+gameover = False
+while not gameover  == True:
+    userInput = input("What letter you choose?").lower()
+    if userInput not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            gameover = True
+            print("You lose")
+        print(f"You have {lives} tries left!")
+    elif userInput in correct_letters:
+        print("you already chosen that letter")
+    else:
+        placeholder = ""
+        for letter in chosen_word:
+            if userInput == letter:
+                placeholder += letter
+                correct_letters.append(letter)
+            elif letter in correct_letters:
+                placeholder += letter
+            else:
+                placeholder += "_"
+        print(placeholder)
+        if "_" not in placeholder:
+            gameover = True
+            print("you win")
