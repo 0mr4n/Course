@@ -22,3 +22,22 @@ else:
         price += 1  
 
 print(f"{price}$")
+
+# IMPROVED VERSION:
+# size = input("What's the size of your desired pizza? L, M or S: ").upper()
+# pep = input("Do you want pepperoni with it? Y/N: ").upper()
+# che = input("Do you want cheese with it? Y/N: ").upper()
+
+# # Base prices for each size
+# prices = {"L": 25, "M": 20, "S": 15}
+# price = prices.get(size, 15)
+
+# # Add pepperoni cost
+# if pep == "Y":
+#     price += 2 if size == "S" else 3
+
+# # Add cheese cost
+# if che == "Y":
+#     price += 1
+
+# print(f"${price}")
